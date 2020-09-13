@@ -45,7 +45,10 @@
 # print(msg1)
 # print(msg2)
 
-# strip:空白：空格，\t,\n
+# strip:空白：空格，\t,\n,
+"""
+注意:这里去除的是字符串两端的空白，在字符串中间的空格，换行，tab都不能去除。
+"""
 # s = '     \n太白\t'
 # print(s)
 # print(s.strip())
