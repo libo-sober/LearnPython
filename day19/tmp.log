@@ -1,0 +1,9 @@
+&(asctime)s - root - WARNING[line:37] - shutill_demo:  warning message 1
+&(asctime)s - root - ERROR[line:38] - shutill_demo:  error
+&(asctime)s - root - CRITICAL[line:39] - shutill_demo:  critical
+2020-09-17 17:15:45 PM - root - WARNING[line:37] - shutill_demo:  warning message 1
+2020-09-17 17:15:45 PM - root - ERROR[line:38] - shutill_demo:  error
+2020-09-17 17:15:45 PM - root - CRITICAL[line:39] - shutill_demo:  critical
+2020-09-17 17:21:38 PM - root - WARNING[line:40] - shutill_demo:  warning message 1a的撒旦
+2020-09-17 17:21:38 PM - root - ERROR[line:41] - shutill_demo:  error
+2020-09-17 17:21:38 PM - root - CRITICAL[line:42] - shutill_demo:  critical
