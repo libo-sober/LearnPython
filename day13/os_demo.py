@@ -8,7 +8,7 @@ import os
 
 # 重命名
 # os.rename('a.txt', 'aa/b.txt')  # 不影响里面的内容
-
+# os.rename('D:\重命名.py', 'D:\重123.py')
 # # 删目录：必须是空目录,不会放在回收站里
 # os.removedirs(r'aa')  # OSError: [WinError 145] 目录不是空的。: 'aa'
 

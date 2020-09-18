@@ -8,7 +8,7 @@ import shutil
 # shutil.copy2()
 # shutil.copytree(src, dst)
 # def rmtree(path, ignore_errors=False, onerror=None):
-# shutil.rmtree()
+shutil.rmtree('D:\笔记\作业讲解.py')
 # loggin 模块
 # 1.用来记录用户的行为---数据分析
 # 2.用来记录用户的行为---操作审计
