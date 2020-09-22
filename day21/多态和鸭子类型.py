@@ -16,7 +16,7 @@ class list():
         self.length += len(num)
 l = [1,2,3]
 len(l)  # 调用__len__方法
-# 所有实现了__len__方法的类,在调用len函数的时候,obj都说是鸭子类型  比如len 
+# 所有实现了__len__方法的类,在调用len函数的时候,obj都说是鸭子类型  比如len
 # 迭代器 __iter__  __next__ 含有就是
 
 

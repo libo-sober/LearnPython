@@ -8,4 +8,6 @@
 
 # 经典类:在python3中不存在,在python2中 不继承object的类都是经典类
 
-
+i = 2
+for i in range(2, 4):
+    print(i)
