@@ -29,3 +29,8 @@ https://app.mokahr.com/campus_apply/zhihu/3818#/job/94f3b9c6-0e1f-43f6-bcf5-58a5
 
 2. 有项目经验者优先
 """
+
+a = b = c = 0
+
+c += 1
+print(a,b,c)
