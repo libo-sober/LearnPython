@@ -54,6 +54,30 @@ class Tree():
             if nd.right:
                 q.append(nd.right)
 
+    def forword(self, root):
+        """前序"""
+        if root == None:
+            return
+        print(root.item)
+        self.forword(root.left)
+        self.forword(root.right)
+
+    def middle(self, root):
+        """中序"""
+        if root == None:
+            return
+        self.middle(root.left)
+        print(root.item)
+        self.middle(root.right)
+
+    def backword(self, root):
+        """后序"""
+        if root == None:
+            return
+        self.backword(root.left)
+        self.backword(root.right)
+        print(root.item)
+
 
 tree = Tree()
 tree.addNode(1)
@@ -64,4 +88,12 @@ tree.addNode(5)
 tree.addNode(6)
 tree.addNode(7)
 tree.travel()
+print("-" * 30)
+tree.forword(tree.root)
+print("-" * 30)
+tree.middle(tree.root)
+print("-" * 30)
+tree.backword(tree.root)
+
+
 
