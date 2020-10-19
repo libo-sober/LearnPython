@@ -164,6 +164,9 @@
 # print(sorted(l2, key=lambda x:x[1]))  # 返回的是一个列表  [('太白', 18), ('wusir', 35), ('口天吴', 41), ('alex', 73)]
 # print(sorted(l2, key=lambda x:x[1], reverse=True))  # 从大到小
 #
+# l2.sort()
+
+
 # # filter 列表推导式的筛选模式
 # l1 = [2, 3, 4, 5, 77, 3]
 # print([i for i in l1 if i > 3])
@@ -185,18 +188,77 @@
 # [1, 4, 9, 16, 25]
 
 # reduce
-from functools import reduce
-def func(x, y):
-    """
-    第一次：x y : 11 2    x + y =  记录：13
-    第二次：x = 13 y = 3  x + y =       16
-    第三次：x = 16 y = 4  x + y =       20
-    :param x:
-    :param y:
-    :return:
-    """
-    return x + y
-l = reduce(func, [11,2,3,4])
-print(l)  # 20
+# from functools import reduce
+# def func(x, y):
+#     """
+#     第一次：x y : 11 2    x + y =  记录：13
+#     第二次：x = 13 y = 3  x + y =       16
+#     第三次：x = 16 y = 4  x + y =       20
+#     :param x:
+#     :param y:
+#     :return:
+#     """
+#     return x + y
+# l = reduce(func, [11,2,3,4])
+# print(l)  # 20
+import sys
+import math
+MAX = sys.maxsize
+
+
+class Prim:
+    '''
+        prim算法求最小生成树
+        :param graph: 图
+        :return: 最小的权值
+        :n:点的个数
+        '''
+    def __init__(self, n, graphy):
+        self.n = n
+        self.cost = 0
+        self.v = 0
+        self.graphy = graphy
+        self.lowcost = []  #记录当前顶点集合到剩下的点的最低权值，“-1”表示已访问过的点，无需访问
+        self.mst = []  ##记录当前被更新的最低权值来自于哪个点，相当于记录是边的起始点，lowcost的下标表示的是最低权值的终止点
+
+    def run(self):
+        for i in range(self.n):
+            self.lowcost.append(self.graphy[0][i])
+            self.mst.append(0)
+        self.lowcost[0] = -1
+        for i in range(self.n-1):
+            min = MAX
+            for j in range(self.n):
+                if min > self.lowcost[j] and self.lowcost[j] != -1:
+                    min = self.lowcost[j]
+                    self.v = j
+            self.cost += min
+            # print(f'{self.mst[self.v]}->{self.v}:{min}')
+            self.lowcost[self.v] = -1
+            for k in range(self.n):
+                if self.lowcost[k] > self.graphy[self.v][k]:
+                    self.lowcost[k] = self.graphy[self.v][k]
+                    self.mst[k] = self.v
+        return self.cost
+
+
+def main():
+    n = int(input())
+    data = [list(map(int, input().split())) for i in range(n)]
+    graphy = [[MAX] * n for i in range(n)]
+    for i in range(n-1):
+        for j in range(i + 1, n):
+            graphy[j][i] = graphy[i][j] = math.sqrt((data[i][0] - data[j][0]) ** 2 + (data[i][1] - data[j][1]) ** 2) + (data[i][2] - data[j][2]) ** 2
+    # print(data)
+    # print(graphy)
+    prim = Prim(n, graphy)
+    # cost = prim.run()
+    cost = round(prim.run(),2)
+    print(cost)
+
+
+if __name__ == '__main__':
+    main()
+
 
 

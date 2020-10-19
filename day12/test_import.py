@@ -24,9 +24,9 @@ import sys
 # print(__file__)  # 当前文件的绝对路径
 # 使用os模块获取一个路径的父路径
 import os
-# print(os.path.dirname((__file__)) + '/aa')
+print(os.path.dirname(__file__) + '/aa')
 sys.path.append(os.path.dirname((__file__)) + '/aa')
-
+print(os.path.dirname(__file__))
 import a
 
 print(a.a)
